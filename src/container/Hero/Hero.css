@@ -1,76 +1,63 @@
-.about-us {
-    max-width: 900px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: #121212; /* Dark background */
-    color: #e0e0e0; /* Light text */
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
+.aboutus-container {
+  text-align: center;
 }
 
-.about-us-header {
-    text-align: center;
-    margin-bottom: 2rem;
+.image-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 500px; /* Set a height for the gallery */
 }
 
-.title {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #f0f0f0; /* Lighter title */
+.slider-image {
+  position: absolute;
+  width: 100%; /* Make images fill the width of the container */
+  height: 100%; /* Make images fill the height of the container */
+  object-fit: cover; /* Maintain aspect ratio while covering the area */
+  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for the images */
+  opacity: 0; /* Hide by default */
+  transform: translateX(-100%); /* Start off-screen to the left */
+
+  /* Change border styles here */
+  border: 5px solid #333; /* Solid border */
+  /* border: 5px dashed #555; */ /* Uncomment for dashed border */
+  /* border: 5px dotted #777; */ /* Uncomment for dotted border */
+
+  border-radius: 15px; /* Slightly more rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
 }
 
-.subtitle {
-    font-size: 1.9rem;
-    font-weight: 600;
-    color: #81d4fa; /* Soft blue for subtitle */
-    margin: 10px 0;
+.slider-image.active-image {
+  opacity: 1; /* Show the active image */
+  transform: translateX(0); /* Center the active image */
 }
 
-.description {
-    color: #b0bec5; /* Softer grey for description */
-    margin: 15px 0;
+.slider-image:not(.active-image) {
+  opacity: 0; /* Hide inactive images */
+  transform: translateX(100%); /* Slide out to the right */
 }
 
-h3 {
-    color: #ffcc80; /* Warm orange for section headers */
-    font-size: 2rem;
-    margin: 1.5rem 0 0.5rem;
-    border-bottom: 2px solid #ffab40; /* Orange underline */
-    padding-bottom: 5px;
+/* Dots styles */
+.indicator-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px; /* Adjusted margin for better spacing */
 }
 
-h4 {
-    color: #ffffff; /* White for subheadings */
-    font-size: 1.5rem;
-    margin: 1rem 0 0.5rem;
+.indicator-dot {
+  height: 12px; /* Increased size for better visibility */
+  width: 12px;
+  margin: 0 6px; /* Adjusted spacing */
+  border-radius: 50%;
+  background-color: #bbb; /* Inactive dot color */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Added transform for scale effect */
 }
 
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 10px 0;
+.indicator-dot.active-dot {
+  background-color: #717171; /* Active dot color */
+  transform: scale(1.2); /* Slightly enlarge the active dot */
 }
 
-a {
-    color: #64b5f6; /* Light blue links */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-    color: #bbdefb; /* Lighter blue on hover */
-}
-
-.card {
-    background: #1f1f1f; /* Darker card background */
-    border: 1px solid #333333; /* Subtle border */
-    border-radius: 10px;
-    margin: 1rem 0;
-    padding: 1.5rem;
-  
-}
-body{
-    background-image:;
-}

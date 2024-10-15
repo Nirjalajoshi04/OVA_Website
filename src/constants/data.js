@@ -1,5 +1,8 @@
 import images from './images';
 
+
+
+
 const Menu = [
     {
         text: 'Home',
@@ -31,6 +34,15 @@ const Menu = [
         link: '#quote',
     }
 ];
+
+
+
+   
+
+
+
+
+
 const ServicesData = [
     {
         titleone: 'Search engine',

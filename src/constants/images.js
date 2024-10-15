@@ -29,8 +29,22 @@ import galleryimg5 from '../assets/galleryimg5.jpg';
 import galleryimg6 from '../assets/galleryimg6.jpg';
 import logo1 from "../assets/logo1.jpg";
 
+import img1 from "../assets/img_2_1728553367493.jpg";
+import img2 from "../assets/img_4_1728553377713.jpg";
+import img3 from "../assets/img_5_1728553384532.jpg";
+import img4 from "../assets/img_6_1728553391536.jpg";
+import img5 from "../assets/img_7_1728553398698.jpg";
 
-export default{
+import facebookIcon from "../assets/facebook.png";
+import instramIcon from "../assets/instagram.png";
+import youtubeIcon from "../assets/youtube.png";
+import whatsappicon from "../assets/whatsapp.png";
+import twitterIcon from "../assets/twitter.png";
+
+
+
+
+const images={
 thingshappen,
 contact,
 logo,
@@ -62,4 +76,19 @@ galleryimg5,
 galleryimg6,
 logo1,
 
+img1,
+img2,
+img3,
+img4,
+img5,
+
+facebookIcon,
+instramIcon,
+youtubeIcon,
+whatsappicon,
+twitterIcon,
+
+
+
 };
+export default images;
