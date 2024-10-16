@@ -3,9 +3,9 @@
     background: #F3F3F3 ;
     background-size: contain;
     background-position: right center;
-    border-radius: 45px;
+    border-radius: 0px;
     padding: 5rem 3rem;
-    margin-bottom: 6rem;
+    
 }
 
 .form-group {
@@ -17,6 +17,29 @@
     background: #FFFFFF;
     border: 1px solid #000000;
     border-radius: 14px;
+   
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 20px;
+    height: 15px;
+    width: 15px; /* Adjust as needed */
+  }
+  .PhoneInputInternationalIcon {
+    width: 20px !important;
+    height: 15px !important;
+  }
+  .btn-orelse-contact {
+    padding: 15px 35px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    background: #191A23;
+    border-radius: 14px;
+    border: none;
+    color: #fff;
+    width: 200px;
+
 }
 
 @media(max-width: 768px) {
@@ -25,4 +48,80 @@
         padding: 3rem 2rem;
         margin-bottom: 3rem;
     }
+
+    .contact-divider{
+      flex-direction: column;
+    }
+    /* Add this CSS to your Contact.css file */
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        
+      }
+      
+      .checkbox-group input[type="checkbox"] {
+        margin-right: 15px;
+        height: 20px;
+        width: 20px; /* Adjust as needed */
+      }
+  
+}
+
+.container-captcha {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.wrapper-captcha {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+canvas {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#reload-button {
+  background-color: #515151;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#reload-button:hover {
+  background-color: #a1a1a1;
+}
+
+#user-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 300px; /* Adjust as needed */
+}
+
+@media only screen and (max-width: 600px) {
+  .container-captcha {
+      flex-direction: column;
+  }
+  
+  .wrapper-captcha {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  #user-input {
+      width: 100%;
+      
+  }
 }

@@ -1,0 +1,36 @@
+/* PhoneNumberInput.css */
+
+.react-tel-input .form-control {
+    border-radius: 5px;
+      /* Green border */
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .react-tel-input .flag-dropdown {
+    border-radius: 5px 0 0 5px;
+     /* Green border */
+    background-color: #f8f8f8;
+  }
+  
+  .react-tel-input .selected-flag {
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .react-tel-input .country-list {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: scroll;
+  }
+  
+  .react-tel-input .country {
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .react-tel-input .country:hover {
+    background-color: #f0f0f0;
+  }
+  
