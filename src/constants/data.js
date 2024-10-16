@@ -27,10 +27,10 @@ const Menu = [
     },
     {
         text:'My Profile',
-        link:'',
+        link:''
     },
     {
-        text: 'Donation',
+        text: 'Donate Now',
         link: '#quote',
     }
 ];
@@ -132,42 +132,56 @@ const WorkingProcess = [
 
 const Team = [
     {
-        name: 'John Smith',
+        name: 'Mr.Rajendra Dure',
         position: 'CEO and Founder',
         info: '10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy',
         foto: images.team01,
         linkedin: '#',
     },
     {
-        name: 'Jane Doe',
+        name: 'Mrs.Vijeta Dure',
         position: 'Director of Operations',
         info: '7+ years of experience in project management and team leadership. Strong organizational and communication skills',
         foto: images.team02,
         linkedin: '#',
     },
     {
-        name: 'Michael Brown',
+        name: 'Dr.Vaishali Iti',
         position: 'Senior SEO Specialist',
         info: '5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization',
         foto: images.team03,
         linkedin: '#',
     },
     {
-        name: 'Emily Johnson',
+        name: 'Dr.Shukrani Dhavan',
         position: 'PPC Manager',
         info: '3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis',
         foto: images.team04,
         linkedin: '#',
     },
     {
-        name: 'Brian Williams',
+        name: 'Dr.Nilam Jadhav',
         position: 'Social Media Specialist',
         info: '4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement',
         foto: images.team05,
         linkedin: '#',
     },
     {
-        name: 'Sarah Kim',
+        name: 'Dr.R.V.Kulkarni',
+        position: 'Content Creator',
+        info: '2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries',
+        foto: images.team06,
+        linkedin: '#',
+    },
+    {
+        name: 'Mr.Vishal Narvekar',
+        position: 'Content Creator',
+        info: '2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries',
+        foto: images.team06,
+        linkedin: '#',
+    },
+    {
+        name: 'Mr.Mangesh Narvekar',
         position: 'Content Creator',
         info: '2+ years of experience in writing and editing Skilled in creating compelling, SEO-optimized content for various industries',
         foto: images.team06,
