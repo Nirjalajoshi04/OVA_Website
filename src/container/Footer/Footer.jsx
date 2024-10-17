@@ -8,26 +8,25 @@ const Footer = () => {
     <footer>
       <div className="row align-items-center">
         <div className="col-md-2 col-12">
-          <img src={images.logofooter} alt="logo" className="img-fluid" />
+          <img src={images.logo1} alt="logo1" className="img-fluid" />
         </div>
-        <div className="col-md-8 col-12 ">
+        <div className="col-md-9 col-12 ">
           <ul className="navbar-footer">
             {data.Menu.slice(0, -1).map((item, index) => (
               <li> <a href="#" >{item.text}</a></li>
             ))}
           </ul>
         </div>
-        <div className="col-md-2 col-12 text-center text-md-end fs-4"><BsFacebook /> <BsTwitter /></div>
+       
       </div>
       <div className="row">
 
         <div className="col-md-4 col-12">
           <ul className="info-contact">
             <li> <span>Contact us:</span></li>
-            <li>Email: info@positivus.com</li>
-            <li>Phone: 555-567-8901</li>
-            <li>Address: 1234 Main St
-              Moonstone City, Stardust State 12345</li>
+            <li>Email: contact@ova.ngo</li>
+            <li>Phone: </li>
+            <li>Address: </li>
           </ul>
         </div>
         <div className="col-md-8 col-12">
@@ -44,8 +43,9 @@ const Footer = () => {
         </div>
 
         <div className="rights">
-          <p>© 2023 Positivus. All Rights Reserved.</p>
+          <p>© 2023 BOVA. All Rights Reserved.</p>
           <p><a href="#" alt="Privacy Policy">Privacy Policy</a></p>
+          <div className="col-md-6 col-12 text-center text-md-end fs-4"><BsFacebook /> <BsTwitter /></div>
 
         </div>
       </div>

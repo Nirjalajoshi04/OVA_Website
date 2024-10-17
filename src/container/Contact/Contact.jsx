@@ -176,8 +176,8 @@ const Contact = () => {
     <div className="section-padding" id="contact">
       <Headings title={t("Contact Us")} text={t("Let's Discuss the Best Solution for You")} />
       <div className="contact-divider" style={{display:'flex'}}>
-        <div className="col-md-4" style={{padding:'60px' ,backgroundColor:'#f3f3f3' }}>
-        <h1 className='title'>Invest in nature</h1>
+        <div className="col-md-1" style={{padding:'50px' ,backgroundColor:'#f3f3f3' }}>
+        <h1 className='title'></h1>
         <p></p>
       </div> 
 <div className="col-md-8"> 
