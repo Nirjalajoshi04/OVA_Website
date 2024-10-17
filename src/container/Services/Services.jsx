@@ -8,6 +8,7 @@ const Services = () => {
       <Headings title="About Us" text="" />
 
       <div className="focus-areas-container">
+        <br></br>
         <h3>Our Focus Areas:</h3>
         <div className="tile-container">
           <div className="tile">
@@ -39,9 +40,9 @@ const Services = () => {
         <h3>How You Can Contribute:</h3>
         <div className="contribution-container">
           <ul>
-            <li><strong>Volunteer</strong> your time and skills at our events.</li>
-            <li><strong>Donate</strong> to support our programs and initiatives.</li>
-            <li><strong>Participate</strong> in workshops and training sessions.</li>
+            <li><strong># Volunteer</strong> your time and skills at our events.</li>
+            <li><strong># Donate</strong> to support our programs and initiatives.</li>
+            <li><strong># Participate</strong> in workshops and training sessions.</li>
           </ul>
         </div>
       </div>

@@ -129,3 +129,39 @@ footer .btn-positivus{
         margin-top: 3rem;
     }
 }
+footer {
+    position: relative; /* Ensure the footer is a positioning reference */
+  }
+  
+  .social-mediaa {
+    position: static; /* Position the icons absolutely */
+          top: 0px; /* Distance from the top */
+          left: 20px; /* Distance from the left */
+          display: flex;
+          gap: 30px; /* Spacing between icons */
+          border: #333;
+          justify-content: end;
+
+      }
+  
+  
+  .social-mediaa-icon {
+    display: inline-flex; 
+          align-items: end;
+          justify-content: end;
+          width: 40px; 
+          height: 40px; 
+          color: crimson;
+          font-size: 50px;
+          text-decoration: none; 
+          border-radius: 50%; 
+          transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .social-mediaa-icon:hover {
+    background-color: crimson;
+    color: crimson;
+    transform: scale(1.1); 
+  }
+  
+  

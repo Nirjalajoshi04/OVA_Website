@@ -27,6 +27,9 @@ import galleryimg3 from '../assets/galleryimg3.jpg';
 import galleryimg4 from '../assets/galleryimg4.jpg';
 import galleryimg5 from '../assets/galleryimg5.jpg';
 import galleryimg6 from '../assets/galleryimg6.jpg';
+import galleryimg7 from '../assets/galleryimg7.jpg';
+import galleryimg8 from '../assets/galleryimg8.jpg';
+
 import logo1 from "../assets/logo1.jpg";
 
 import img1 from "../assets/img_2_1728553367493.jpg";
@@ -34,6 +37,8 @@ import img2 from "../assets/img_4_1728553377713.jpg";
 import img3 from "../assets/img_5_1728553384532.jpg";
 import img4 from "../assets/img_6_1728553391536.jpg";
 import img5 from "../assets/img_7_1728553398698.jpg";
+import img6 from "../assets/galleryimg7.jpg";
+import img7 from "../assets/galleryimg8.jpg";
 
 import facebookIcon from "../assets/facebook.png";
 import instramIcon from "../assets/instagram.png";
@@ -74,6 +79,9 @@ galleryimg3,
 galleryimg4,
 galleryimg5,
 galleryimg6,
+galleryimg7,
+galleryimg8,
+
 logo1,
 
 img1,
@@ -81,6 +89,8 @@ img2,
 img3,
 img4,
 img5,
+img6,
+img7,
 
 facebookIcon,
 instramIcon,
