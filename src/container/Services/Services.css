@@ -1,6 +1,6 @@
 #services {
     padding: 10px;
-    background-color: black;
+  
     border-radius: 20px;
 }
 
@@ -81,3 +81,57 @@
         padding: 15px;
     }
 }
+
+
+
+
+.impactful-causes-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .cause-icon {
+    font-size: 50px;
+    color: black;
+  }
+  
+  .cause-icon.bi-briefcase-medical {
+    color:black; /* Yellow icon for health */
+  }
+  
+  .cause-icon.bi-mortarboard {
+    color:black; /* Green icon for education */
+  }
+  
+  .impactful-causes-section h2 {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .card {
+    border: none;
+    background-color: #edede9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .btn {
+    background-color: #13070c;
+    
+  }
+
+  .btn:hover{
+    background-color: #13070c;
+    opacity: 0.9;
+
+  }
+  

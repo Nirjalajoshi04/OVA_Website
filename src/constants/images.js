@@ -3,7 +3,7 @@ import contact  from '../assets/contact.png';
 import logo  from '../assets/logo.png';
 import logo01  from '../assets/logo01.png';
 import logo02  from '../assets/logo02.png';
-import logo03  from '../assets/logo03.png';
+
 import logo04  from '../assets/logo04.png';
 import logo05  from '../assets/logo05.png';
 import logo06  from '../assets/logo06.png';
@@ -30,7 +30,7 @@ import galleryimg6 from '../assets/galleryimg6.jpg';
 import galleryimg7 from '../assets/galleryimg7.jpg';
 import galleryimg8 from '../assets/galleryimg8.jpg';
 
-import logo1 from "../assets/logo1.jpg";
+import logo1 from "../assets/logo1.png";
 
 import img1 from "../assets/img_2_1728553367493.jpg";
 import img2 from "../assets/img_4_1728553377713.jpg";
@@ -55,7 +55,6 @@ contact,
 logo,
 logo01,
 logo02,
-logo03,
 logo04,
 logo05,
 logo06,

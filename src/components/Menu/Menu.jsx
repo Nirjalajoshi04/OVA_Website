@@ -9,7 +9,7 @@ import './Menu.css';
 const Menu = () => {
     return (
   
-           <Navbar collapseOnSelect expand="lg" bg="ligth" variant="ligth">
+           <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark" >
                 <Container>
                 <Navbar.Brand href="#home"> <img src={images.logo1} alt="logo" /></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

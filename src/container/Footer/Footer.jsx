@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
       
       <div className="rights">
-        <p>© 2023 Positivus. All Rights Reserved.</p>
+        <p>© 2023 BOVA. All Rights Reserved.</p>
         <p>
           <a href="#" alt="Privacy Policy">
             Privacy Policy

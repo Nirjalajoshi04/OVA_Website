@@ -1,7 +1,7 @@
 .case-studies-container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 0;
+  padding: 0px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -58,5 +58,72 @@
 
   .case-study-text {
       font-size: 14px;
+  }
+}
+
+
+
+/* Vision Section */
+.vision-section {
+  background-color:#13070c; /* Purple color */
+  color: #fff;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 10px 0 0 10px;
+   /* Optional: Add background patterns */
+}
+
+.vision-section .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.vision-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.vision-section p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Mission Section */
+.mission-section {
+  background-color: #ddc8c4; /* Yellow color */
+  color: #333;
+  text-align: center;
+  padding: 50px 30px;
+  border-radius: 0 10px 10px 0;
+ /* Optional: Add background patterns */
+}
+
+.mission-section .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.mission-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.mission-section p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Vision and Mission Section Overall */
+.vision-mission-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+  .vision-section,
+  .mission-section {
+    border-radius: 10px;
   }
 }

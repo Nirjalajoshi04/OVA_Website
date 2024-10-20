@@ -1,63 +1,62 @@
-.aboutus-container {
-  text-align: center;
-}
 
-.image-slider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.hero-section {
+  height: 100vh; /* Full viewport height */
+  width: 100vw;
+  background-size: cover;
+  background-position:center;
+  background-repeat: no-repeat;
   position: relative;
+  transition: opacity 3s ease, transform 3s ease; 
+
+  opacity: 0.9;
   overflow: hidden;
-  height: 500px; /* Set a height for the gallery */
+  
+
+  
+  
+ 
 }
 
-.slider-image {
+.hero-section::before {
+  content: '';
   position: absolute;
-  width: 100%; /* Make images fill the width of the container */
-  height: 100%; /* Make images fill the height of the container */
-  object-fit: cover; /* Maintain aspect ratio while covering the area */
-  transition: opacity 1s ease, transform 1s ease; /* Smooth transition for the images */
-  opacity: 0; /* Hide by default */
-  transform: translateX(-100%); /* Start off-screen to the left */
-
-  /* Change border styles here */
-  border: 5px solid #333; /* Solid border */
-  /* border: 5px dashed #555; */ /* Uncomment for dashed border */
-  /* border: 5px dotted #777; */ /* Uncomment for dotted border */
-
-  border-radius: 15px; /* Slightly more rounded corners */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for transparency */
+  z-index: 1;
 }
 
-.slider-image.active-image {
-  opacity: 1; /* Show the active image */
-  transform: translateX(0); /* Center the active image */
+.hero-content {
+  z-index: 2;
+  color:black;
 }
 
-.slider-image:not(.active-image) {
-  opacity: 0; /* Hide inactive images */
-  transform: translateX(100%); /* Slide out to the right */
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight:700;
+  color:black;
+  opacity:1;
 }
 
-/* Dots styles */
-.indicator-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px; /* Adjusted margin for better spacing */
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
-.indicator-dot {
-  height: 12px; /* Increased size for better visibility */
-  width: 12px;
-  margin: 0 6px; /* Adjusted spacing */
-  border-radius: 50%;
-  background-color: #bbb; /* Inactive dot color */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s; /* Added transform for scale effect */
+.hero-content .btn {
+  padding: 0;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  width:150px;
+  
+ 
 }
 
-.indicator-dot.active-dot {
-  background-color: #717171; /* Active dot color */
-  transform: scale(1.2); /* Slightly enlarge the active dot */
+.hero-content .btn-secondary{
+  background-color:#131112;
+  
 }
 
