@@ -46,5 +46,8 @@
   "description": "Check out the live version of this website in production [Live Demo](https://pameschurrer.es/positivus/)",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
 }

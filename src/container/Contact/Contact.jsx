@@ -1,9 +1,8 @@
-import React, { useState,useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Headings } from '../../components';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-
 import { Toast } from 'react-bootstrap';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -21,6 +20,7 @@ const Contact = () => {
       const ctx = canvas.getContext('2d'); 
       initializeCaptcha(ctx); 
   }, []); 
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -28,95 +28,50 @@ const Contact = () => {
     companyName: '',
     phoneNumber: '',
     message: '',
-    
     agreeToCommunications: false,
     agreeToStoreData: false
   });
 
   const handleChange = (e) => {
-    
-    setFormData({ ...formData, [e.target.name]: e.target.value }  );
-    //const {target} = e
-    //const {value} = target
-    
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const generateRandomChar = (min, max) => 
-        String.fromCharCode(Math.floor 
-            (Math.random() * (max - min + 1) + min)); 
+        String.fromCharCode(Math.floor(Math.random() * (max - min + 1) + min)); 
   
-    const generateCaptchaText = () => { 
-        let captcha = ''; 
-        for (let i = 0; i < 4; i++) { 
-            
-            captcha += generateRandomChar(48, 57); 
-        } 
-        return captcha.split('').sort( 
-            () => Math.random() - 0.5).join(''); 
-    }; 
+  const generateCaptchaText = () => { 
+      let captcha = ''; 
+      for (let i = 0; i < 4; i++) { 
+          captcha += generateRandomChar(48, 57); 
+      } 
+      return captcha.split('').sort(() => Math.random() - 0.5).join(''); 
+  }; 
   
-    const drawCaptchaOnCanvas = (ctx, captcha) => { 
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); 
-        const textColors = ['rgb(0,0,0)', 'rgb(130,130,130)']; 
-        const letterSpace = 150 / captcha.length; 
-        for (let i = 0; i < captcha.length; i++) { 
-            const xInitialSpace = 25; 
-            ctx.font = '20px Roboto Mono'; 
-            ctx.fillStyle = textColors[Math.floor( 
-                Math.random() * 2)]; 
-            ctx.fillText( 
-                captcha[i], 
-                xInitialSpace + i * letterSpace, 
-                  
-                // Randomize Y position slightly 
-                Math.floor(Math.random() * 16 + 25), 
-                100 
-            ); 
-        } 
-    }; 
+  const drawCaptchaOnCanvas = (ctx, captcha) => { 
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height); 
+      const textColors = ['rgb(0,0,0)', 'rgb(130,130,130)']; 
+      const letterSpace = 150 / captcha.length; 
+      for (let i = 0; i < captcha.length; i++) { 
+          const xInitialSpace = 25; 
+          ctx.font = '20px Roboto Mono'; 
+          ctx.fillStyle = textColors[Math.floor(Math.random() * 2)]; 
+          ctx.fillText(captcha[i], xInitialSpace + i * letterSpace, Math.floor(Math.random() * 16 + 25), 100); 
+      } 
+  }; 
   
-    const initializeCaptcha = (ctx) => { 
-        setUserInput(''); 
-        const newCaptcha = generateCaptchaText(); 
-        setCaptchaText(newCaptcha); 
-        drawCaptchaOnCanvas(ctx, newCaptcha); 
-    }; 
-  
-    const handleUserInputChange = (e) => { 
-        setUserInput(e.target.value); 
-    }; 
-  
-    const handleCaptchaSubmit = () => { 
-        if (userInput === captchaText) { 
-          setShowToast(true);
-          // Clear form fields after successful submission
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        companyName: '',
-        phoneNumber: '+91',
-        message: '',
-       
-        agreeToCommunications: false,
-        agreeToStoreData: false,
-        
-      });
-      const canvas = canvasRef.current; 
-     const ctx = canvas.getContext('2d'); 
-      initializeCaptcha(ctx); 
+  const initializeCaptcha = (ctx) => { 
       setUserInput(''); 
-        } else { 
-            alert('Incorrect Captcha'); 
-            const canvas = canvasRef.current; 
-            const ctx = canvas.getContext('2d'); 
-            initializeCaptcha(ctx); 
-        } 
-    }; 
- 
+      const newCaptcha = generateCaptchaText(); 
+      setCaptchaText(newCaptcha); 
+      drawCaptchaOnCanvas(ctx, newCaptcha); 
+  }; 
+  
+  const handleUserInputChange = (e) => { 
+      setUserInput(e.target.value); 
+  }; 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //handleCaptchaSubmit();
     if (userInput === captchaText) { 
       setShowToast(true);
       setFormData({
@@ -126,47 +81,35 @@ const Contact = () => {
         companyName: '',
         phoneNumber: '+91',
         message: '',
-    
         agreeToCommunications: false,
         agreeToStoreData: false,
-        
       });
       const canvas = canvasRef.current; 
-     const ctx = canvas.getContext('2d'); 
+      const ctx = canvas.getContext('2d'); 
       initializeCaptcha(ctx); 
       setUserInput(''); 
-    try {
-      // Send form data to backend API
-     
-      const response = await axios.post('https://orelse.ai/api/contact', formData);
-      console.log('Form submission successful:', response.data);
+      
+      try {
+        // Updated API endpoint to local server
+        const response = await axios.post('http://localhost:5000/api/contact', formData);
+        console.log('Form submission successful:', response.data);
                
-      
-     
-      
-      const res = await axios.post('https://orelse.ai/api/send-email', formData); 
+        const res = await axios.post('http://localhost:5000/api/send-email', formData); 
 
-      if (!res.ok) {
-        throw new Error('Failed to send email');
+        if (!res.ok) {
+          throw new Error('Failed to send email');
+        }
+
+      } catch (error) {
+        console.error(error);
       }
-
-      // Handle successful submission (e.g., display success message)
-      
-    } catch (error) {
-      console.error(  error);
-      // Handle error gracefully (e.g., display error message)
-    }
-    
-
     } else { 
       alert('Incorrect Captcha'); 
       const canvas = canvasRef.current; 
       const ctx = canvas.getContext('2d'); 
       initializeCaptcha(ctx); 
-  } 
-
+    } 
   };
-
 
   const handlePhoneChange = (value) => {
     setFormData({ ...formData, phoneNumber: value });
@@ -177,98 +120,81 @@ const Contact = () => {
       <Headings title={t("Contact Us")} text={t("Let's Discuss the Best Solution for You")} />
       <div className="contact-divider" style={{display:'flex'}}>
         <div className="col-md-1" style={{padding:'50px' ,backgroundColor:'#f3f3f3' }}>
-        <h1 className='title'></h1>
-        <p></p>
-      </div> 
-<div className="col-md-8"> 
+          <h1 className='title'></h1>
+          <p></p>
+        </div> 
+        <div className="col-md-8"> 
+          <div className="contact">
+            <div className="row">
+              <div className="formdetails">
+                <form onSubmit={handleSubmit}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder={t("First Name")}
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder={t("Last Name")}
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
 
-      <div className="contact" >
-        <div className="row">
-          <div className="formdetails">
-            <form onSubmit={handleSubmit}>
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                      <input
+                        className="form-control"
+                        type="email"
+                        placeholder={t("Email")}
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div style={{ display: 'flex', marginBottom: '20px' }}>
+                      <input
+                        className="form-control"
+                        type="text"
+                        placeholder={t("Company Name")}
+                        name="companyName"
+                        value={formData.companyName}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
 
-
-            
-  <div style={{ display: 'flex', flexDirection: 'column' }}>
-  <div style={{ display: 'flex', marginBottom: '20px' }}>
-    
-    <input
-      className="form-control"
-      type="text"
-      placeholder={t("First Name")}
-      name="firstName"
-      value={formData.firstName}
-      onChange={handleChange}
-      required
-    />
-  </div>
-  <div style={{ display: 'flex', marginBottom: '20px' }}>
-    
-    <input
-      className="form-control"
-      type="text"
-      placeholder={t("Last Name")}
-      name="lastName"
-      value={formData.lastName}
-      onChange={handleChange}
-      required
-    />
-  </div>
-</div>
-
-<div style={{ display: 'flex', flexDirection: 'column' }}>
-  <div style={{ display: 'flex', marginBottom: '20px' }}>
-    
-    <input
-      className="form-control"
-      type="email"
-      placeholder={t("Email")}
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      required
-    />
-  </div>
-  <div style={{ display: 'flex', marginBottom: '20px' }}>
-   
-    <input
-      className="form-control"
-      type="text"
-      placeholder={t("Company Name")}
-      name="companyName"
-      value={formData.companyName}
-      onChange={handleChange}
-      required
-    />
-  </div>
-</div>
-
-
-
-
-
-
-<div style={{ display: 'flex', marginBottom: '20px' }}>
-  
-<PhoneInput
-    country={'in'}
-        
-    placeholder={t("Phone Number")}
-    required
-    inputProps={{
-      name: 'phoneNumber',
-      required: true,
-      autoFocus: true
-    }}
-    value={formData.phoneNumber}
-    onChange={handlePhoneChange}
-  />
-</div>
-
-
+                  <div style={{ display: 'flex', marginBottom: '20px' }}>
+                    <PhoneInput
+                      country={'in'}
+                      placeholder={t("Phone Number")}
+                      required
+                      inputProps={{
+                        name: 'phoneNumber',
+                        required: true,
+                        autoFocus: true
+                      }}
+                      value={formData.phoneNumber}
+                      onChange={handlePhoneChange}
+                    />
+                  </div>
 
                   <div className="form-group">
-                  <label htmlFor="Textarea1">{t("Message*")}</label> 
+                    <label htmlFor="Textarea1">{t("Message*")}</label> 
                     <textarea
                       className="form-control"
                       id="Textareamessage"
@@ -280,7 +206,6 @@ const Contact = () => {
                     ></textarea>
                   </div>
 
-                  
                   <div className="form-group checkbox-group">
                     <input
                       type="checkbox"
@@ -304,61 +229,51 @@ const Contact = () => {
                     />
                     <label htmlFor="checkbox2">{t("I agree to store and process my personal data")}</label>
                   </div>
+
                   <div> 
-             
-             
-                  <label style={{  marginTop:'20px',minWidth: '130px' }}>{t("Captcha Verification")}</label>
-         <div className="container-captcha"> 
-             <div className="wrapper-captcha"> 
-                 <canvas ref={canvasRef} 
-                     width="200"
-                     height="70"> 
+                    <label style={{ marginTop: '20px', minWidth: '130px' }}>{t("Captcha Verification")}</label>
+                    <div className="container-captcha"> 
+                      <div className="wrapper-captcha"> 
+                        <canvas ref={canvasRef} width="200" height="70"></canvas> 
+                        <button type="button" id="reload-button" onClick={() => initializeCaptcha(canvasRef.current.getContext('2d'))}> 
+                          Reload 
+                        </button> 
+                      </div> 
+                      <input 
+                        className="form-control"
+                        type="text"
+                        id="user-input"
+                        placeholder="Enter the text in the image"
+                        value={userInput} 
+                        autoComplete="off"
+                        onChange={handleUserInputChange}/> 
+                    </div> 
+                  </div> 
+                  <button type="submit" className="btn-orelse-contact">{t("Submit")}</button>
+                </form>
 
-                 </canvas> 
-                 <button type="button" id="reload-button" onClick={ 
-                     () => initializeCaptcha( 
-                         canvasRef.current.getContext('2d'))}> 
-                     Reload 
-                 </button> 
-             </div> 
-             <input 
-              className="form-control"
-                 type="text"
-                 id="user-input"
-                 placeholder="Enter the text in the image"
-                 value={userInput} 
-                 autocomplete="off"
-                 onChange={handleUserInputChange}/> 
-                   
-             
-         </div> 
-     </div> 
-     <button type="submit" className="btn-orelse-contact"  >  {t("Submit")}</button>
-          
-         </form>
-
-         <Toast
-  show={showToast}
-  onClose={() => setShowToast(false)}
-  delay={3000}
-  autohide
-  position="top-end" // Position the toast on the top right corner
-  style={toastStyle}
->
-  <Toast.Header>
-    <strong className="mr-auto">Success</strong>
-  </Toast.Header>
-  <Toast.Body style={{fontSize:"18px",backgroundColor:'#ECFADC'}}>Form submitted successfully!</Toast.Body>
-</Toast>
-         </div>
-         </div>
-    </div>
-            
+                <Toast
+                  show={showToast}
+                  onClose={() => setShowToast(false)}
+                  delay={3000}
+                  autohide
+                  position="top-end"
+                  style={toastStyle}
+                >
+                  <Toast.Header>
+                    <strong className="mr-auto">Success</strong>
+                  </Toast.Header>
+                  <Toast.Body style={{fontSize:"18px", backgroundColor:'#ECFADC'}}>Form submitted successfully!</Toast.Body>
+                </Toast>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 const toastStyle = {
   position: 'fixed',
   top: '20px',
